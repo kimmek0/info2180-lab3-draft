@@ -1,6 +1,6 @@
 onload=function(){
-    const player1='X';// wont change
-    const player2='O';// wont change
+    const player1='X'; // wont change
+    const player2='O'; //wont change
     var array=[];
     let player_current;
     var get_squares=document.getElementById('board').getElementsByTagName('div');
@@ -9,8 +9,7 @@ onload=function(){
     for(let i=0;i<len;i++){
         get_squares[i].className+=('square');
         get_squares[i].addEventListener('click',function(){
-
-            // ('Clicked')
+            
             getplayer()
             function getplayer(){
                 if(player_current===player1){
@@ -22,10 +21,8 @@ onload=function(){
                     document.getElementById('board').getElementsByTagName('div')[i].className+=(' X');
                 }
                 array.push(get_squares[i].innerHTML=player_current);
-
-                // (array)
+              
                 checkwinner();
-
                 function checkwinner(){
                     let pos0=get_squares[0].innerHTML;
                     let pos1=get_squares[1].innerHTML;
@@ -69,7 +66,6 @@ onload=function(){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
                     }
-                    
                 }
             }
 
@@ -82,7 +78,6 @@ onload=function(){
        });
     }  
     document.querySelector('button').addEventListener('click',function(){
-       
         location.reload();
     })
-}
+}            
