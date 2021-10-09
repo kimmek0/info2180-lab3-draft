@@ -22,49 +22,91 @@ onload=function(){
                 }
                 array.push(get_squares[i].innerHTML=player_current);
               
-                checkwinner();
-                function checkwinner(){
-                    let pos0=get_squares[0].innerHTML;
-                    let pos1=get_squares[1].innerHTML;
-                    let pos2=get_squares[2].innerHTML;
-                    let pos3=get_squares[3].innerHTML;
-                    let pos4=get_squares[4].innerHTML;
-                    let pos5=get_squares[5].innerHTML;
-                    let pos6=get_squares[6].innerHTML;
-                    let pos7=get_squares[7].innerHTML;
-                    let pos8=get_squares[8].innerHTML;
+                winnercheck();
+                function winnercheck(){
+                    let cor0=get_squares[0].innerHTML;
+                    let cor1=get_squares[1].innerHTML;
+                    let cor2=get_squares[2].innerHTML;
+                    let cor3=get_squares[3].innerHTML;
+                    let cor4=get_squares[4].innerHTML;
+                    let cor5=get_squares[5].innerHTML;
+                    let cor6=get_squares[6].innerHTML;
+                    let cor7=get_squares[7].innerHTML;
+                    let cor8=get_squares[8].innerHTML;
                     
-                    if (pos0!=='' && pos0==pos1 && pos0==pos2){
+                    if (cor0!=='' && cor0==cor1 && cor0==cor2){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+                        
+                        //reloads game if player wins before all boxes are marked
+                   //     document.querySelector('get_squares[0:8]').addEventListener('click',function(){
+                     //       location.reload();
+                       // })
                     }
-                    if(pos3==pos4 && pos3==pos5 && pos3!==''){
+                    if(cor3==cor4 && cor3==cor5 && cor3!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                   //     document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                     //       location.reload();
+                       // })
                     }
-                    if(pos6==pos7 && pos6==pos8 && pos6!==''){
+                    if(cor6==cor7 && cor6==cor8 && cor6!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                    //    document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                      //      location.reload();
+                        //})
                     }
-                    if(pos0==pos4 && pos0==pos8 && pos4!==''){
+                    if(cor0==cor4 && cor0==cor8 && cor4!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                  //      document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                    //        location.reload();
+                      //  })
                     }
-                    if(pos2==pos4 && pos2==pos6 && pos2!==''){
+                    if(cor2==cor4 && cor2==cor6 && cor2!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                   //     document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                     //       location.reload();
+                       // })
                     }
-                    if(pos0==pos3 && pos0==pos6 && pos0!==''){
+                    if(cor0==cor3 && cor0==cor6 && cor0!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                    //    document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                      //      location.reload();
+                        //})
                     }
-                    if(pos1==pos4 && pos1==pos7 && pos7!==''){
+                    if(cor1==cor4 && cor1==cor7 && cor7!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                      //  document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                        //    location.reload();
+                       // })
                     }
-                    if(pos2==pos5 && pos2==pos8 && pos2!==''){
+                    if(cor2==cor5 && cor2==cor8 && cor2!==''){
                         stat.textContent="Congratulations! "+array[array.length-1]+" is the Winner!";
                         stat.className+="you-won";
+
+                      //  document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                       //     location.reload();
+                       // })
+                    }
+                    if(cor0!==''&&cor1!=='' && cor2!==''&&cor3!=='' && cor4!==''&&cor5!==''&&cor6!==''&&cor7!==''&&cor8!=='')
+                    {
+                        stat.textContent="It is a Draw!";
+                        stat.className+="you-won";
+
+                        //document.queryselector('get_squares[0:8]').addEventListener('click',function(){
+                          //  location.reload();
+                       // })
                     }
                 }
             }
